@@ -51,7 +51,6 @@ namespace WorkingCalendarDays.Tests
             TestGetNextDay(notWorkingDayCount, dayMove, assertTotalDays, new DateTime(2016, 05, 05));
         }
 
-
         [Test]
         public void GetNextDay_HalfHolidaysPeriod()
         {
@@ -70,7 +69,6 @@ namespace WorkingCalendarDays.Tests
             TestGetNextDay(notWorkingDayCount, dayMove, assertTotalDays, new DateTime(2016, 12, 29));
         }
 
-
         [Test]
         public void GetNextDay_LongPeriod()
         {
@@ -82,13 +80,13 @@ namespace WorkingCalendarDays.Tests
 
         private void TestGetNextDay(int notWorkingDayCount, int dayMove, int assertTotalDays, DateTime startDateTime)
         {
-            var notWirkingDays = new List<CalendarDay>();
+            var notWorkingDays = new List<CalendarDay>();
             for (int i = 0; i < notWorkingDayCount; i++)
             {
-                notWirkingDays.Add(new CalendarDay { Day = startDateTime.AddDays(i) });
+                notWorkingDays.Add(new CalendarDay { Day = startDateTime.AddDays(i) });
             }
 
-            foreach (var holidaysGroupedByYear in notWirkingDays.GroupBy(x => x.Day.Year))
+            foreach (var holidaysGroupedByYear in notWorkingDays.GroupBy(x => x.Day.Year))
             {
                 _notWorkingDayProvider.Stub(m => m.GetYearNotWorkingCalendarDays(holidaysGroupedByYear.Key)).Return(holidaysGroupedByYear.ToList());
             }

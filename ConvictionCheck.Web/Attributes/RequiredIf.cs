@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace СonvictionCheck.Web.Attributes
+namespace ConvictionCheck.Web.Attributes
 {
     public class RequiredIf : ValidationAttribute
     {

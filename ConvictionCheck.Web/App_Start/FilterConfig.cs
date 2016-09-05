@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace СonvictionCheck.Web
+namespace ConvictionCheck.Web
 {
     public class FilterConfig
     {

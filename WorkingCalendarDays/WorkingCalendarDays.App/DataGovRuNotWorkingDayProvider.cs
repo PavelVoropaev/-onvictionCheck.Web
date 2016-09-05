@@ -35,10 +35,10 @@ namespace WorkingCalendarDays.App
 
                     for (int i = 1; i <= 12; i++)
                     {
-                        var holidayDaysInMounth = csv.GetField<string>(i).Split("*,".ToCharArray(), StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
+                        var holidayDaysInMonth = csv.GetField<string>(i).Split("*,".ToCharArray(), StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
 
                         holidays.AddRange(
-                            holidayDaysInMounth.Select(holiday => new CalendarDay { Day = new DateTime(year, i, holiday) }));
+                            holidayDaysInMonth.Select(holiday => new CalendarDay { Day = new DateTime(year, i, holiday) }));
                     }
 
                     _holidaysByYearDictionary.Add(year, holidays);

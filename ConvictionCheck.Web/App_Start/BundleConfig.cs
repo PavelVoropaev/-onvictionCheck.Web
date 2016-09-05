@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace СonvictionCheck.Web
+namespace ConvictionCheck.Web
 {
     public class BundleConfig
     {

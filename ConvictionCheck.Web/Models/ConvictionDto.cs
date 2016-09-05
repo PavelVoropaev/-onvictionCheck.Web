@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using СonvictionCheck.Web.Attributes;
+using ConvictionCheck.Web.Attributes;
 
-namespace СonvictionCheck.Web.Models
+namespace ConvictionCheck.Web.Models
 {
     public class ConvictionDto
     {

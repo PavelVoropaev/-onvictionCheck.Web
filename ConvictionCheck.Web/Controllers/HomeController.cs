@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
-using СonvictionCheck.Web.Models;
+using ConvictionCheck.Web.Models;
 
-namespace СonvictionCheck.Web.Controllers
+namespace ConvictionCheck.Web.Controllers
 {
     public class HomeController : Controller
     {

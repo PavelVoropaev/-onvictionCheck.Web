@@ -1,0 +1,38 @@
+﻿@model СonvictionCheck.Web.Models.ConvictionDto
+@{
+    ViewBag.Title = "Проверка судимостей";
+}
+
+<h2>@ViewBag.Title.</h2>
+@using (Html.BeginForm("AddNewCondiction", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(m => m.IsHaveConviction, new { @class = "col-md-2 control-label" })
+        @Html.ValidationMessageFor(m => m.IsHaveConviction)
+        <div class="col-md-10">
+            <label>
+                @Html.RadioButtonFor(model => model.IsHaveConviction, true) Есть
+            </label>
+            <label>
+                @Html.RadioButtonFor(model => model.IsHaveConviction, false) Нет
+            </label>
+        </div>
+    </div>
+    <div class="form-group" id="ArticleNumberBlock" style="display: @(Model?.IsHaveConviction != true ? "none" : "") ">
+        @Html.LabelFor(m => m.ArticleNumber, new { @class = "col-md-2 control-label" })
+        @Html.ValidationMessageFor(m => m.ArticleNumber)
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.ArticleNumber, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Сохранить" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/ConvictionCheck/ConvictionCheck.js")
+}

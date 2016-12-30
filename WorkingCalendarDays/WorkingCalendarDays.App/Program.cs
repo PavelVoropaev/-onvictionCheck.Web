@@ -20,8 +20,8 @@ namespace WorkingCalendarDays.App
             }
 
             var notWorkingDayCacheProvider = new NotWorkingDayCacheProvider(new DataGovRuNotWorkingDayProvider(pathToFile), cacheExpirationTime);
-            var workinDayManager = new WorkingDayManager(notWorkingDayCacheProvider);
-            var nextDay = workinDayManager.GetNextDay(day.Date, dayMove);
+            var workingDayManager = new WorkingDayManager(notWorkingDayCacheProvider);
+            var nextDay = workingDayManager.GetNextDay(day.Date, dayMove);
 
             Console.WriteLine($"NextDay: {nextDay.Date}");
         }
